@@ -1,0 +1,201 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>damian</groupId>
+	<artifactId>AppJQuery</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>AppJQuery Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<spring.version>3.2.0.RELEASE</spring.version>
+		<hibernate.version>4.1.9.Final</hibernate.version>
+	</properties>
+
+	<dependencies>
+		<!-- Spring 3 dependencies -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- JDBC Data Access Library (depends on spring-core, spring-beans, spring-context, 
+			spring-tx) Define this if you use Spring's JdbcTemplate API (org.springframework.jdbc.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA, 
+			and iBatis. (depends on spring-core, spring-beans, spring-context, spring-tx) 
+			Define this if you need ORM (org.springframework.orm.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- Object-to-XML Mapping (OXM) abstraction and integration with JAXB, 
+			JiBX, Castor, XStream, and XML Beans. (depends on spring-core, spring-beans, 
+			spring-context) Define this if you need OXM (org.springframework.oxm.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- JavaXServlet dependencies -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- Hibernate dependencies -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.0.0.Alpha2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>4.0.1.Final</version>
+		</dependency>
+
+		<!-- MySQL Java Connector dependency -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.17</version>
+		</dependency>
+
+		<!-- Sitemesh -->
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+
+		<!-- Mechanizm logów -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.6</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>JBoss</id>
+			<name>JBoss Repsitory</name>
+			<layout>default</layout>
+			<url>http://repository.jboss.org/maven2</url>
+		</repository>
+
+		<repository>
+			<id>jvnet-nexus-releases</id>
+			<name>jvnet-nexus-releases</name>
+			<url>https://maven.java.net/content/repositories/releases/</url>
+		</repository>
+
+		<repository>
+			<id>Java.Net</id>
+			<url>http://download.java.net/maven/2/</url>
+		</repository>
+
+		<repository>
+			<id>org.springframework.maven.milestone</id>
+			<name>Spring Maven Milestone Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<finalName>AppJQuery</finalName>
+	</build>
+</project>
