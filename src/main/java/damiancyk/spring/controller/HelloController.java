@@ -13,7 +13,7 @@ public class HelloController {
 	@Autowired
 	private LoginService loginService;
 
-	@RequestMapping("")
+	@RequestMapping("/")
 	public String hello(ModelAndView mav) {
 		return "index";
 	}
@@ -24,6 +24,18 @@ public class HelloController {
 		User user = loginService.getUser(0);
 		mav.addObject("username", user);
 
+		return mav;
+	}
+
+	@RequestMapping("/login")
+	public String login() {
+		return "login/login";
+	}
+
+	@RequestMapping("/register")
+	public ModelAndView register(ModelAndView mav) {
+		mav.setViewName("login/register");
+		mav.addObject("user", new User());
 		return mav;
 	}
 }

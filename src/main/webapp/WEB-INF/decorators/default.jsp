@@ -14,44 +14,29 @@
 <dec:head />
 <script>
 	$(document).ready(function() {
-		var div = $("#container");
+		var div = $("#menuUp");
 		div.css("opacity", "0.1");
-		div.css("height", "200px");
-		div.css("width", "200px");
 		div.animate({
-			height : '600px',
-			width : '900px',
 			opacity : '0.7'
 		}, "slow");
-		
+
 		var element = $("#idMenuList");
-		element.hover(function(){
+		element.hover(function() {
 			element.css("color", "red");
-			    },
-			    function(){
-			    	element.css("color", "black");
-			  }); 
-		
-		$("#line").css("posX","500");
-		
-		$("a").click(function(){
-			$("#line").animate({opacity: "0.1"});
+		}, function() {
+			element.css("color", "black");
 		});
 	});
 </script>
 </head>
 <body>
-<div id="line"></div>
+	<div id="line"></div>
 	<div id="container">
 		<div id="menuUp">
 			<ul>
 				<li><a href="<%=request.getContextPath()%>/">START</a></li>
 				<li><a href="<%=request.getContextPath()%>/another">PRZYWITANIE</a></li>
-				<li><select id="idMenuList" name="mydropdown">
-						<option value="Milk">Fresh Milk</option>
-						<option value="Cheese">Old Cheese</option>
-						<option value="Bread">Hot Bread</option>
-				</select></li>
+				<li><a href="<c:url value='/j_spring_security_logout' />">WYLOGUJ</a></li>
 			</ul>
 		</div>
 		<div id="menuLeft">
