@@ -22,7 +22,7 @@ body {
 }
 
 #menu {
-	background: #999966 url("../image/icon-menu.png") no-repeat right center;
+	background: #999966 url("../image/iconMenu.png") no-repeat right center;
 	width: 100%;
 	height: 40px;
 	position: relative;
@@ -99,19 +99,23 @@ form {
 	border: 1px dotted #262626;
 }
 
-div.form textarea {
+form input:focus,button:focus {
+	background-color: #D1E0B2;
+}
+
+form textarea {
 	width: 400px;
 	height: 200px;
 	border: 1px solid #000000;
 	background-color: #CCCCCC;
 }
 
-div.form textarea.big {
+form textarea.big {
 	width: 400px;
 	height: 350px;
 }
 
-div.form h1 {
+form h1 {
 	color: black;
 	font-size: 14px;
 	padding: 5px 0 5px 5px;
@@ -119,7 +123,7 @@ div.form h1 {
 	border-top: 1px solid #161712;
 }
 
-div.form label {
+form label {
 	width: 100%;
 	height: 16px;
 	color: #333333;
@@ -128,7 +132,7 @@ div.form label {
 	padding: 2px;
 }
 
-div.form label span {
+form label span {
 	display: block;
 	color: black;
 	font-size: 12px;
@@ -138,7 +142,7 @@ div.form label span {
 	padding: 5px 20px 0 0;
 }
 
-div.form .inputSimple {
+form .inputSimple {
 	margin: 1px;
 	color: black;
 	padding: 2px;
@@ -149,9 +153,8 @@ div.form .inputSimple {
 	color: black;
 }
 
-div.form .button {
-	margin-top: 10px;
-	margin-left: 150px;
+form .button {
+	margin-top: 5px;
 	-moz-box-shadow: inset 0px -1px 0px 0px #ffffff;
 	-webkit-box-shadow: inset 0px -1px 0px 0px #ffffff;
 	box-shadow: inset 0px -1px 0px 0px #ffffff;
@@ -169,17 +172,40 @@ div.form .button {
 	text-decoration: none;
 }
 
-div.form .button:hover {
+form .button:hover {
 	background-color: #dcdcdc;
 	border-style: inset;
 	color: black;
 }
 
-div.form .button:active {
+form .button:active {
 	position: relative;
 	top: 1px;
 }
 
-div.form .input #buttonLogin {
+form .input #buttonLogin {
 	color: red;
+}
+
+div.messageInfo {
+	color: gray;
+	padding-left: 20px;
+	width: 150px;
+	background: url("../image/iconInfo.gif") no-repeat left center;
+	color: gray;
+	width: 150px;
+}
+
+div.messageGood {
+	color: green;
+	padding-left: 20px;
+	width: 150px;
+	background: url("../image/iconGood.png") no-repeat left center;
+}
+
+div.messageBad {
+	color: red;
+	padding-left: 20px;
+	width: 150px;
+	background: url("../image/iconBad.gif") no-repeat left center;
 }

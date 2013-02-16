@@ -16,4 +16,9 @@ public class LoginServiceImpl implements LoginService {
 	public User getUser(Integer id) {
 		return loginDAO.getUser(id);
 	}
+
+	@Transactional
+	public boolean isBusyLogin(String login) {
+		return loginDAO.isBusyLogin(login);
+	}
 }

@@ -22,4 +22,15 @@ public class LoginDAOImpl implements LoginDAO {
 
 		return (User) criteria.uniqueResult();
 	}
+
+	public boolean isBusyLogin(String login) {
+		Session session = sessionFactory.getCurrentSession();
+		Criteria criteria = session.createCriteria(User.class);
+		criteria.add(Restrictions.like("login", login));
+		User user = (User) criteria.uniqueResult();
+		if (user != null)
+			return true;
+		else
+			return false;
+	}
 }

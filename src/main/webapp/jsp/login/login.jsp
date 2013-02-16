@@ -15,38 +15,40 @@
 </style>
 </head>
 <body onload='document.f.j_username.focus();'>
-	
-		<h1>Witaj! Wpisz swój Login i Hasło.</h1>
 
-		<c:if test="${not empty error}">
-			<div class="errorblock">
-				Podałeś złe dane, spróbuj ponownie.<br /> Caused :
-				${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
-			</div>
-		</c:if>
-<div class="form">
+	<h1>Witaj! Wpisz swój Login i Hasło.</h1>
+
+	<c:if test="${not empty error}">
+		<div class="errorblock">
+			Podałeś złe dane, spróbuj ponownie.<br /> Caused :
+			${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+		</div>
+	</c:if>
+	<div class="form">
 		<form name='f' action="<c:url value='j_spring_security_check' />"
 			method='POST'>
 
 			<table>
 				<tr>
 					<td>Login:</td>
-					<td><input type='text' name='j_username' value=''></td>
+					<td><input type='text' class="inputSimple" name='j_username'
+						value=''></td>
 				</tr>
 				<tr>
 					<td>Hasło:</td>
-					<td><input type='password' name='j_password' /></td>
+					<td><input type='password' class="inputSimple"
+						name='j_password' /></td>
 				</tr>
 				<tr>
-					<td colspan='2'><br/><input name="submit" class="buttonAction"
+					<td colspan='2'><br /> <input name="submit" class="button"
 						type="submit" value="ZALOGUJ" /></td>
-	
+
 					<td colspan='2'><input name="reset" class="buttonAction"
 						type="reset" value="reset" /></td>
 				</tr>
 				<tr>
-					<td colspan='2'><br /><br/>
-					<a class="buttonAdd" href="register">rejestracja</a> <c:if
+					<td colspan='2'><br /> <br /> <a class="buttonAdd"
+						href="register">rejestracja</a> <c:if
 							test="${not empty param.messageRegisterSuccess}">
 							<div class="messageGood">
 								Pomyslnie sie zarejstrowales!<br /> Aby w pelni korzystac z
