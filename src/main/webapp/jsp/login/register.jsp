@@ -18,7 +18,8 @@
 						$("#idBtnRegister").css("display", "none");
 
 						$("input")
-								.blur(
+								.bind(
+										'blur keyup',
 										function() {
 											if (($("#idLoginInfo")
 													.hasClass("messageGood")) == true
@@ -35,7 +36,8 @@
 										});
 
 						$("#idLoginInput")
-								.keyup(
+								.bind(
+										'blur keyup',
 										function() {
 											if ($
 													.trim($("#idLoginInput")
@@ -51,7 +53,8 @@
 											}
 										});
 
-						$("#idEmailInput").blur(
+						$("#idEmailInput").bind(
+								'blur keyup',
 								function() {
 									var str = $.trim($("#idEmailInput").val());
 									if (str.length > 0) {
@@ -76,12 +79,13 @@
 									}
 								});
 
-						$("#idPasswordInput").blur(
+						$("#idPasswordInput").bind(
+								'blur keyup',
 								function() {
 									var str = $.trim($("#idPasswordInput")
 											.val());
 									if (str.length > 0) {
-										if (validatePassword(str) == true) {
+										if (validatePassword(str, 6) == true) {
 											$("#idPasswordInfo").removeClass(
 													"messageInfo messageBad")
 													.addClass("messageGood");
@@ -92,7 +96,8 @@
 													"messageGood messageInfo")
 													.addClass("messageBad");
 											$('#idPasswordInfo').html(
-													"haslo za krotkie");
+													"znakow: " + str.length
+															+ " (min 6)");
 										}
 									} else {
 										$("#idPasswordInfo").removeClass(
@@ -117,7 +122,7 @@
 
 				<br />
 				<form:form method="post" id="idFormRegister" action="register"
-					commandName="user">
+					autocomplete="off" commandName="user">
 					<table>
 						<tr>
 							<td><form:label path="login">

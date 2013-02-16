@@ -1,5 +1,5 @@
-function validatePassword(sPassword) {
-	if (sPassword.length >= 6)
+function validatePassword(sPassword, min) {
+	if (sPassword.length >= min)
 		return true;
 	else
 		return false;
