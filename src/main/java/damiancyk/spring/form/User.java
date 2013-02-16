@@ -1,91 +1,154 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package damiancyk.spring.form;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
- 
+import java.io.Serializable;
+import javax.persistence.*;
+
 /**
- *
- * User Entity
- *
- * @author onlinetechvision.com
- * @since 25 Mar 2012
- * @version 1.0.0
- *
+ * 
+ * @author dejmien
  */
 @Entity
-@Table(name="user")
-public class User {
- 
-    private int id;
-    private String name;
-    private String surname;
- 
-    /**
-     * Get User Id
-     *
-     * @return int - User Id
-     */
-    @Id
-    @Column(name="id", unique = true, nullable = false)
-    public int getId() {
-        return id;
-    }
- 
-    /**
-     * Set User Id
-     *
-     * @param int - User Id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
- 
-    /**
-     * Get User Name
-     *
-     * @return String - User Name
-     */
-    @Column(name="name", unique = true, nullable = false)
-    public String getName() {
-        return name;
-    }
- 
-    /**
-     * Set User Name
-     *
-     * @param String - User Name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
- 
-    /**
-     * Get User Surname
-     *
-     * @return String - User Surname
-     */
-    @Column(name="surname", unique = true, nullable = false)
-    public String getSurname() {
-        return surname;
-    }
- 
-    /**
-     * Set User Surname
-     *
-     * @param String - User Surname
-     */
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }   
- 
-    @Override
-    public String toString() {
-        StringBuffer strBuff = new StringBuffer();
-        strBuff.append("id : ").append(getId());
-        strBuff.append(", name : ").append(getName());
-        strBuff.append(", surname : ").append(getSurname());
-        return strBuff.toString();
-    }
+@Table(name = "user")
+@NamedQueries({ @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u") })
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Basic(optional = false)
+	@Column(name = "Id_User")
+	private Integer idUser;
+
+	@Basic(optional = false)
+	@Column(name = "LOGIN")
+	private String login;
+
+	@Basic(optional = false)
+	@Column(name = "email")
+	private String email;
+
+	@Column(name = "firstname")
+	private String firstname;
+
+	@Column(name = "lastname")
+	private String lastname;
+
+	@Basic(optional = false)
+	@Column(name = "PASSWORD")
+	private String password;
+
+	@Basic(optional = false)
+	@Column(name = "authority")
+	private String authority;
+
+	@Basic(optional = false)
+	@Column(name = "ENABLED")
+	private int enabled;
+
+	public User() {
+	}
+
+	public User(Integer idUser) {
+		this.idUser = idUser;
+	}
+
+	public User(Integer idUser, String login, String password, int enabled) {
+		this.idUser = idUser;
+		this.login = login;
+		this.password = password;
+		this.enabled = enabled;
+	}
+
+	public Integer getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(Integer idUser) {
+		this.idUser = idUser;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
+
+	public int getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 0;
+		hash += (idUser != null ? idUser.hashCode() : 0);
+		return hash;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		if (!(object instanceof User)) {
+			return false;
+		}
+		User other = (User) object;
+		if ((this.idUser == null && other.idUser != null)
+				|| (this.idUser != null && !this.idUser.equals(other.idUser))) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "net.organizer.form.User[ idUser=" + idUser + " ]";
+	}
+
 }

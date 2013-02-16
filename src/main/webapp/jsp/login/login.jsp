@@ -16,7 +16,7 @@
 </head>
 <body onload='document.f.j_username.focus();'>
 	
-		<h3>Witaj! Wpisz swój Login i Hasło.</h3>
+		<h1>Witaj! Wpisz swój Login i Hasło.</h1>
 
 		<c:if test="${not empty error}">
 			<div class="errorblock">

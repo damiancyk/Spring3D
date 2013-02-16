@@ -5,9 +5,9 @@
 <head>
 </head>
 <body>
-<h3>osoba z bazy o id: ${username.id}</h3>
+<h3>osoba z bazy o id: ${user.idUser}</h3>
 	<p id="pUsername">
-		<b>${username.name} ${username.surname} </b>
+		<b>${user.login}</b>
 	</p>
 </body>
 </html>

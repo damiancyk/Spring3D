@@ -11,25 +11,25 @@
 <head>
 <title><dec:title default="Organizer" /></title>
 <link rel="stylesheet"
-	href="<c:url value="/resources/style/mobile.css" />" media="all" />
-
+	href="<c:url value="/resources/style/default.css" />" media="all" />
+	<script type="text/javascript" src="resources/js/jquery-1.9.1.min.js"></script>
 <dec:head />
 </head>
 <body>
-	<div id="container">
-		<div id="menuUp">
+	<div id="window">
+		<div id="menu">
 			<ul>
-				<li><a href="<%=request.getContextPath()%>/menuTeam">GRUPOWE</a></li>
-				<li><a href="<%=request.getContextPath()%>/menuLocal">LOKALNE</a></li>
-				<li><a href="<%=request.getContextPath()%>/menuAnother">POZOSTALE</a></li>
+				<li><a href="<%=request.getContextPath()%>">START</a></li>
+				<li><a href="<%=request.getContextPath()%>/another">ANOTHER</a></li>
+				<li><a href="<c:url value='/j_spring_security_logout' />">WYLOGUJ</a></li>
+				<li>
 			</ul>
 		</div>
-		<div id="contentsBody">
+		<div id="contents">
 			<dec:body />
 		</div>
 
-		<div id="footer">############Designed by Damian
-			Pieta############</div>
+		<div id="footer">Designed by Damian Pięta</div>
 	</div>
 </body>
 </html>

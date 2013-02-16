@@ -6,6 +6,23 @@
 <html>
 <head>
 <title>Rejestracja</title>
+<script>
+	$(document).ready(function() {
+		$('#btnRegister').click(function() {
+			var sEmail = $('#registerEmail').val();
+			if ($.trim(sEmail).length == 0) {
+				alert('Please enter valid email address');
+				e.preventDefault();
+			}
+			if (validateEmail(sEmail)) {
+				alert('Email is valid');
+			} else {
+				alert('Invalid Email Address');
+				e.preventDefault();
+			}
+		});
+	});
+</script>
 </head>
 <body>
 	<div class="register">
@@ -17,8 +34,8 @@
 		<c:if test="${!empty user}">
 			<div class=form>
 
-				<br/>
-				<form:form method="post" action="register/check" commandName="user">
+				<br />
+				<form:form method="post" action="register" commandName="user">
 					<table>
 						<tr>
 							<td><form:label path="login">
@@ -28,6 +45,13 @@
 									value="${user.login}" /></td>
 						</tr>
 						<tr>
+							<td><form:label path="login">
+						Email
+					</form:label></td>
+							<td><form:input class="inputSimple" path="email"
+									id="registerEmail" value="${user.email}" /></td>
+						</tr>
+						<tr>
 							<td><form:label path="password">
 						Haslo
 					</form:label></td>
@@ -35,27 +59,13 @@
 									path="password" value="${user.password}" /></td>
 						</tr>
 						<tr>
-							<td colspan="2">
-										<div class="messageGood">
-				<br />..pamiętaj, aby uzupelnic swoje dane osobowe po pomyślnym
-				zarejstrowaniu! <br /> ..to umożliwi między innymi powiadamianie Cię o
-				nadchodzących zdarzeniach..<br/>..i zadaniach, które kiedyś trzeba zrobić :)
-				</div>
-							<input type="submit" class="button"
-								value="zakoncz rejestracje" /> <c:if
-									test="${not empty param.messageRegisterFailed}">
-									<div class="messageAlert">
-										Nie wpisales danych <br />lub uzytkownik o podanym loginie juz
-										istnieje!
-									</div>
-								</c:if></td>
+							<td colspan="2"><input type="submit" class="button"
+								id="btnRegister" value="zakoncz rejestracje" /></td>
 						</tr>
 					</table>
 				</form:form>
 			</div>
 		</c:if>
-
-		-=-
 	</div>
 </body>
 </html>
