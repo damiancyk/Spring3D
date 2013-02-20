@@ -12,13 +12,14 @@
 	<http pattern="/login/**" security="none" />
 	<http pattern="/resources/**" security="none" />
 	<http pattern="/register/**" security="none" />
+	<http pattern="/item/**" security="none" />
 
 	<!-- stateless RESTful for pure data and basic auth -->
 	<http pattern="/rest/**" create-session="stateless">
 		<intercept-url pattern='/**' access='ROLE_USER' />
 		<http-basic />
 	</http>
-	
+
 	<http auto-config="true">
 		<intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
 		<intercept-url pattern="/**" access="ROLE_USER, ROLE_ADMIN" />

@@ -27,7 +27,6 @@ function isBusyLogin() {
 			$("#idLoginInfo").removeClass("messageInfo messageBad").addClass(
 					"messageGood");
 			$('#idLoginInfo').html("login wolny");
-
 		}
 	});
 }

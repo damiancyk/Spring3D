@@ -12,7 +12,8 @@
 <title><dec:title default="Organizer" /></title>
 <link rel="stylesheet"
 	href="<c:url value="/resources/style/default.css" />" media="all" />
-	<script type="text/javascript" src="resources/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="resources/js/validator.js"></script>
 <dec:head />
 </head>
 <body>
@@ -21,7 +22,8 @@
 			<ul>
 				<li><a href="<%=request.getContextPath()%>">START</a></li>
 				<li><a href="<%=request.getContextPath()%>/another">ANOTHER</a></li>
-				<li><a href="<c:url value='/j_spring_security_logout' />">WYLOGUJ</a></li>
+				<li><a href="<%=request.getContextPath()%>/webGL">webGL</a></li>
+				<li><a href="<c:url value='/j_spring_security_logout' />">LOGOUT</a></li>
 				<li>
 			</ul>
 		</div>

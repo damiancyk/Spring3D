@@ -10,25 +10,26 @@ body {
 	font-family: Monospace;
 	font-weight: bold;
 	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #window {
 	background-color: #8A8A5C;
 	width: 100%;
 	height: 100%;
-	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 0;
 	border: 0;
 }
 
 #menu {
-	background: #999966 url("../image/iconMenu.png") no-repeat right center;
-	width: 100%;
+	background: #8A8A5C url("../image/iconMenu.png") no-repeat right center;
 	height: 40px;
-	position: relative;
-	margin: 0px auto;
-	padding: 0;
-	border: 0;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #menu ul,ul li {
@@ -38,8 +39,8 @@ body {
 #menu ul {
 	border-bottom: 1px dotted black;
 	float: left;
-	width: 60%;
-	padding-left: 20px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #menu ul li {
@@ -69,12 +70,16 @@ body {
 	background: #C2C2A3;
 	width: 80%;
 	height: 100%;
-	margin: 0px auto;
 	padding-top: 5px;
 	padding-left: 30px;
-	border: 1px dotted black;
+	border: 1px dotted #666666;
+	border-radius: 7px;
 	position: relative;
 	background: #C2C2A3;
+	margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 7px;
 }
 
 #footer {
@@ -86,17 +91,24 @@ body {
 	font: italic small-caps 10px Verdana, sans-serif;
 	bottom: 0;
 	position: absolute;
-	padding: 0;
 	border: 0;
+	margin-right: auto;
 }
 
 form {
+	text-align: center;
 	color: black;
-	margin: 20px auto auto 50px;
+	background-color: #C2C2AD;
 	width: 500px;
 	height: auto;
 	position: relative;
 	border: 1px dotted #262626;
+	border-radius: 7px;
+	margin: auto;
+}
+
+form:hover {
+	border: 1px double #262626;
 }
 
 form input:focus,button:focus {
@@ -124,36 +136,40 @@ form h1 {
 }
 
 form label {
+	text-align: center;
 	width: 100%;
 	height: 16px;
 	color: #333333;
 	display: block;
 	border: 1px dashed #666666;
-	padding: 2px;
-}
-
-form label span {
-	display: block;
-	color: black;
-	font-size: 12px;
-	float: left;
-	width: 100px;
-	text-align: right;
-	padding: 5px 20px 0 0;
+	border-radius: 7px;
+	padding: auto;
+	margin: 10px;
 }
 
 form .inputSimple {
-	margin: 1px;
+	margin: 10px;
 	color: black;
 	padding: 2px;
 	width: 200px;
 	height: 16px;
 	background: #CFCFCF;
 	border: 1px dotted #4C3C1B;
+	border-radius: 7px;
 	color: black;
 }
 
 form .button {
+	color: orange;
+	background-color: #2E2E1F;
+}
+
+form .button:hover {
+	color: yellow;
+	background-color: #2E2E1F;
+}
+
+.button {
 	margin-top: 5px;
 	-moz-box-shadow: inset 0px -1px 0px 0px #ffffff;
 	-webkit-box-shadow: inset 0px -1px 0px 0px #ffffff;
@@ -164,7 +180,7 @@ form .button {
 	border-radius: 7px;
 	border: 1px solid #999966;
 	display: inline-block;
-	color: #4d4d4d;
+	color: black;
 	font-family: arial;
 	font-size: 14px;
 	font-weight: bold;
@@ -172,19 +188,15 @@ form .button {
 	text-decoration: none;
 }
 
-form .button:hover {
+.button:hover {
 	background-color: #dcdcdc;
 	border-style: inset;
 	color: black;
 }
 
-form .button:active {
+.button:active {
 	position: relative;
 	top: 1px;
-}
-
-form .input #buttonLogin {
-	color: red;
 }
 
 div.messageInfo {
@@ -208,4 +220,43 @@ div.messageBad {
 	padding-left: 20px;
 	width: 150px;
 	background: url("../image/iconBad.gif") no-repeat left center;
+}
+
+div .list {
+
+}
+
+div .list .element {
+	width: 40%; height : 40px;
+	margin: auto;
+	background: #FFFF99;
+	border: 1px solid #888;
+	border-radius: 12px;
+	color: #333333;
+	height: 40px;
+	text-align: center;
+	border: 1px gray solid;
+	border-spacing: 1;
+}
+
+div .list .element th {
+	text-align: left;
+	border: 1px gray dashed;
+	border-spacing: 1;
+	border: 1px gray dashed;
+}
+
+div .list .element td {
+	text-align: left;
+	border: 1px #ADFF2F dashed;
+	border-spacing: 1;
+	text-align: left;
+}
+
+div .list .element tr.header {
+	height: 10px;
+}
+div .list .element:hover {
+	background-color: white;
+	border-bottom-color: #fff;
 }

@@ -26,22 +26,9 @@ public class LoginController {
 	Settings settings;
 
 	@RequestMapping(value = { "/welcome", "/", "index", "start" }, method = RequestMethod.GET)
-	public String welcomeSite(ModelMap model, Principal principal) {
+	public String hello(ModelMap model, Principal principal) {
 		settings.user.login = "loginn";
 		return "login/welcome";
-	}
-
-	@RequestMapping("/another")
-	public ModelAndView note(ModelAndView mav) {
-		mav.setViewName("another");
-		User user = loginService.getUser(2);
-		mav.addObject("user", user);
-		return mav;
-	}
-
-	@RequestMapping("/webGL")
-	public String webGL() {
-		return "webGL";
 	}
 
 	@RequestMapping("/login")
@@ -63,13 +50,6 @@ public class LoginController {
 			return true;
 		else
 			return false;
-		// if (login.length() > 0) {
-		// if (loginService.isBusyLogin(login))
-		// return "login zajety";
-		// else
-		// return "login wolny";
-		// } else
-		// return "wpisz login";
 	}
 
 	@RequestMapping(value = "/register/time", method = RequestMethod.GET)

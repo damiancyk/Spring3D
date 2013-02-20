@@ -68,6 +68,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>damiancyk.spring.form.User</value>
+				<value>damiancyk.spring.form.Item</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

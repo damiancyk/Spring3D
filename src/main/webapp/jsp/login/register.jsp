@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>Rejestracja</title>
+<title>Register page</title>
 <script>
 	$(document)
 			.ready(
@@ -49,7 +49,7 @@
 																"messageGood messageBad")
 														.addClass("messageInfo");
 												$('#idLoginInfo').html(
-														"wpisz login");
+														"empty field");
 											}
 										});
 
@@ -63,19 +63,19 @@
 													"messageInfo messageBad")
 													.addClass("messageGood");
 											$('#idEmailInfo').html(
-													"poprawny email");
+													"correct email");
 										} else {
 											$("#idEmailInfo").removeClass(
 													"messageGood messageInfo")
 													.addClass("messageBad");
 											$('#idEmailInfo').html(
-													"niepoprawny email");
+													"incorrect email");
 										}
 									} else {
 										$("#idEmailInfo").removeClass(
 												"messageGood messageBad")
 												.addClass("messageInfo");
-										$('#idEmailInfo').html("wpisz email");
+										$('#idEmailInfo').html("empty field");
 									}
 								});
 
@@ -90,13 +90,13 @@
 													"messageInfo messageBad")
 													.addClass("messageGood");
 											$('#idPasswordInfo').html(
-													"haslo poprawne");
+													"correct password");
 										} else {
 											$("#idPasswordInfo").removeClass(
 													"messageGood messageInfo")
 													.addClass("messageBad");
 											$('#idPasswordInfo').html(
-													"znakow: " + str.length
+													"signs: " + str.length
 															+ " (min 6)");
 										}
 									} else {
@@ -104,7 +104,7 @@
 												"messageGood messageBad")
 												.addClass("messageInfo");
 										$('#idPasswordInfo')
-												.html("wpisz haslo");
+												.html("empty field");
 									}
 								});
 					});
@@ -112,51 +112,50 @@
 
 </head>
 <body>
-	<div class="register">
-		<h3>Rejestracja</h3>
-		<input class="buttonBack" type=button value="powrot"
-			onCLick="history.back()"> <br />
+	<h3>You don't have your own account? Register new one.</h3>
+	<input class="button" type=button value="back" onCLick="history.back()">
+	<br />
 
-		<c:if test="${!empty user}">
-			<div class=form>
-
-				<br />
-				<form:form method="post" id="idFormRegister" action="register"
-					autocomplete="off" commandName="user">
-					<table>
-						<tr>
-							<td><form:label path="login">
+	<c:if test="${!empty user}">
+			<br />
+			<form:form method="post" id="idFormRegister" action="register"
+				autocomplete="off" commandName="user">
+				<table>
+					<tr>
+						<td><form:label path="login">
 						Login
 					</form:label></td>
-							<td><form:input class="inputSimple" path="login"
-									id="idLoginInput" value="${user.login}" /></td>
-							<td><div id="idLoginInfo"></div></td>
-						</tr>
-						<tr>
-							<td><form:label path="login">
+						<td><form:input class="inputSimple" path="login"
+								id="idLoginInput" value="${user.login}" /></td>
+						<td><div id="idLoginInfo"></div></td>
+					</tr>
+					<tr>
+						<td><form:label path="login">
 						Email
 					</form:label></td>
-							<td><form:input class="inputSimple" path="email"
-									id="idEmailInput" value="${user.email}" /></td>
-							<td><div id="idEmailInfo"></div></td>
-						</tr>
-						<tr>
+						<td><form:input class="inputSimple" path="email"
+								id="idEmailInput" value="${user.email}" /></td>
+						<td><div id="idEmailInfo"></div></td>
+					</tr>
+					<tr>
 
-							<td><form:label path="password">
-						Haslo
+						<td><form:label path="password">
+						Password
 					</form:label></td>
-							<td><form:input class="inputSimple" type="password"
-									path="password" id="idPasswordInput" value=" ${user.password}" /></td>
-							<td><div id="idPasswordInfo"></div></td>
-						</tr>
-						<tr>
-							<td colspan="2"><input type="submit" class="button"
-								id="idBtnRegister" value="zakoncz rejestracje" /></td>
-						</tr>
-					</table>
-				</form:form>
-			</div>
-		</c:if>
-	</div>
+						<td><form:input class="inputSimple" type="password"
+								path="password" id="idPasswordInput" value=" ${user.password}" /></td>
+						<td><div id="idPasswordInfo"></div></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" class="button"
+							id="idBtnRegister" value="register" /></td>
+					</tr>
+					<tr>
+						<td colspan='2'><input name="reset" class="button"
+							type="reset" value="clear" /></td>
+					</tr>
+				</table>
+			</form:form>
+	</c:if>
 </body>
 </html>
